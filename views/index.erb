@@ -1,0 +1,32 @@
+<div class = "jumbotron">
+  <h1> Tamagotchi! </h1>
+</div>
+
+<div class="row" id="row1">
+
+  <div class="col-md-6" id="row1col1">
+    <form action = "/name">
+      <div class = "form-group">
+        <label for = "form_name"> Enter your Tamagotchi's name!</label>
+        <input id = "form_name" name = "form_name" class = "form-control" type = "text">
+      </div>
+      <button type  = "submit" class = "btn-primary"> Create my Tamagotchi! </button>
+    </form>
+  </div> <!--End row1col1-->
+
+  <div class="col-md-6" id="row1col2">
+    <h2><%= @name %></h2>
+    <ul>
+      <li>Fullness: <%= @fullness %></li>
+      <li>Energy: <%= @energy %></li>
+      <li>Strength: <%= @strength %></li>
+    </ul>
+  </div> <!--End row1col2-->
+
+</div> <!--End row1-->
+<div class="row" id="row2">
+  <div class="col-md-6" id="row2col1">
+    <ul id="petList">
+    </ul>
+  </div><!--End row2col1-->
+</div><!--End row2-->
