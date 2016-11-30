@@ -1,0 +1,9 @@
+<ul id="petList">
+  <% @@all_pets.each do |pet| %>
+    <li><a href="/pet_view/<%= pet.id() %>"><%= pet.name() %></a></li>
+  <% end %>
+</ul>
+
+
+<a href="/" class="btn btn-primary">Create a new pet!</a>
+<a href="/clear" class="btn btn-warning">Delete all pets!</a>

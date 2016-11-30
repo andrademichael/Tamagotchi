@@ -8,10 +8,15 @@ class Tamagotchi
     @energy = 100
     @strength = 100
     @last_checked = Time.now()
+    @id = @@all_pets.length().+(1)
   end
 
   define_method(:name) do
     @pet_name
+  end
+
+  define_method(:id) do
+    @id
   end
 
   define_method(:food_level) do
@@ -46,7 +51,29 @@ class Tamagotchi
     end
   end
 
+  define_method(:save) do
+    @@all_pets.push(self)
+  end
+
   define_method(:time_passes) do
     self.change_food_level(-1)
+  end
+
+  define_singleton_method(:all) do
+    @@all_pets
+  end
+
+  define_singleton_method(:clear) do
+    @@all_pets = []
+  end
+
+  define_singleton_method(:find) do |identification|
+    found_pet = nil
+    @@all_pets.each() do |pet|
+      if pet.id().eql?(identification.to_i())
+        found_pet = pet
+      end
+    end
+    found_pet
   end
 end
