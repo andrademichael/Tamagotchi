@@ -22,7 +22,8 @@ get('/pets_list') do
 end
 
 get('/pet_view/:id') do
-  @this_pet = @@all_pets.find(params.fetch("id"))
+  Tamagotchi.all.find(params.fetch("id"))
+  puts(this_pet)
   erb(:pet_view)
 end
 
